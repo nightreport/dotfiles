@@ -1,0 +1,26 @@
+font_family				MononokiNerdFont
+font_size				13
+
+tab_bar_edge			top
+tab_bar_style 			separator
+tab_separator 			" ┇"
+
+include					carbonfox.conf
+background_opacity 		0.98
+
+enable_audio_bell 		no
+editor 					nvim
+cursor_trail 			1
+
+allow_remote_control 	yes
+
+map ctrl+shift+enter launch --cwd=current
+enabled_layouts			Tall
+map ctrl+[ layout_action decrease_num_full_size_windows
+map ctrl+] layout_action increase_num_full_size_windows
+map ctrl+/ layout_action mirror toggle
+map ctrl+y layout_action mirror true
+# BEGIN_KITTY_THEME
+# Symfonic
+include moon.conf
+# END_KITTY_THEME

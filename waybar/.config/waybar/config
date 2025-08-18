@@ -1,0 +1,134 @@
+// vim: set filetype=jsonc:
+{
+    "height": 5, // Waybar height (to be removed for auto height)
+    "layer": "top", // Waybar at top layer
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-bottom": 0,
+    "margin-right": 0,
+    "spacing": 5, // Gaps between modules (4px)
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock", ],
+    "modules-right": [
+		"backlight",
+		"pulseaudio",
+		"battery",
+		"tray",
+	    "hyprland/language",
+		"idle_inhibitor",
+		"custom/notification",
+	],
+	"hyprland/language": {
+        "on-click": "hyprctl switchxkblayout current next",
+        "tooltip-format": "change language",
+        "format-en": "en",
+        "format-hr": "hr",
+	},
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "persistent-workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": [],
+        "7": [],
+        "8": [],
+        "9": [],
+        "10": [],
+      },
+      "on-click": "activate",
+      "format-icons": {
+        "1": "—",
+        "2": "二",
+        "3": "三",
+        "4": "四",
+        "5": "五",
+        "6": "六",
+        "7": "七",
+        "8": "八",
+        "9": "九",
+        "10": "十",
+        "urgent": "",
+        "default": "",
+        "active": ""
+      }
+    },
+    "hyprland/window": {
+        "format": "{}",
+		"max-length": 30,
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+		"locale": "en_GB.UTF-8",
+        /*"format": "{:L%Y.%m.%d.%H:%M -%a}", */
+		"interval": 1,
+        "format": "{:L%y.%m.%d.%H.%M.%S}",
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
+    },
+
+    "backlight": {
+        "device": "DP-1",
+        "format": "{icon} {percent}%",
+        "format-icons": ["","", "", "", "", "",""],
+		"tooltip-format": "󰥓 Brightness Level 󰥓",
+        "on-click": "",
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": " {volume}%",
+        "format-bluetooth-muted": " ",
+        "format-muted": " ",
+        "format-icons": {
+            "headphone": " ",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", " ", " "]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+
+    "battery": {
+      "bat": "BAT0",
+      "adapter": "ADP0",
+      "interval": 60,
+      "states": {
+		  "warning" : 30,
+          "critical": 15
+      },
+      "max-length": 20,
+      "format": "{icon} {capacity}%",
+      "format-warning": "{icon}  {capacity}%",
+      "format-critical": "{icon}  {capacity}%",
+      "format-charging": " {capacity}%",
+      "format-plugged": "  {capacity}%",
+      "format-alt": "{icon} {time}",
+      "format-full": "  {capacity}%",
+      "format-icons": [" ", " ", " ", " ", " "],
+    },
+
+	"idle_inhibitor": {
+		"format": "{icon} ",
+		"format-icons":
+		{
+			"activated": "",
+            "deactivated": ""
+		},
+		"tooltip" : true,
+		"tooltip-format-deactivated" : "󰥓 Idle status: 󰥓\n      Normal",
+		"tooltip-format-activated" :   "󰥓 Idle status: 󰥓\n    Inhibited",
+	},
+
+	"custom/notification":{
+    	"format": "󱅫 ",
+    	"on-click": "swaync-client -t -sw",
+        "tooltip-format": "󰥓 Notification Centre 󰥓",
+    },
+}

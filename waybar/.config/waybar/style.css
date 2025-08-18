@@ -1,0 +1,109 @@
+* {
+	/* `otf-font-awesome` is required to be installed for icons */
+	border-radius:0;
+	margin-top:0px;
+	margin-right:0px;
+
+	font-family: MononokiNerdFont;
+	font-size: 13px;
+	background-color: rgba(20, 20, 20, 0.8);
+}
+
+#workspaces button {
+	padding: 0 5px;
+	background-color: transparent;
+	box-shadow: inset 0 -3px transparent;
+	transition: all 0.3s cubic-bezier(0.77,0.00,0.175,1.00);
+}
+
+#workspaces button.focused {
+	color: #f5f5f5;
+	transition: all 0.3s cubic-bezier(0.77,0.00,0.175,1.00);
+}
+
+#workspaces button.active {
+	color: #ff0000;
+	transition: all 0.3s cubic-bezier(0.77,0.00,0.175,1.00);
+}
+
+#workspaces button.urgent {
+	background-color: #eb4d4b;
+	transition: all 0.3s cubic-bezier(0.77,0.00,0.175,1.00);
+}
+
+
+#clock,
+#battery,
+#backlight,
+#pulseaudio,
+#custom-media,
+#idle_inhibitor,
+#language,
+#custom-notification,
+#tray{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#language{
+	border: solid 2px rgba(175, 10, 10, 0.8);
+	border-radius: 5px;
+}
+
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+	margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+	margin-right: 0;
+}
+
+#pulseaudio {
+	color: #f5f5f5;
+}
+
+#battery.charging,
+#battery.plugged {
+	background-color: transparent;
+	color: #ffff00;
+	/* background-color: #26a65b; */
+}
+#battery.full {
+	background-color: transparent;
+	color: #0a95d5;
+}
+
+
+#battery.warning:not(.charging) {
+	background-color: #000000;
+	color: #ffc000;
+}
+#battery.critical:not(.charging) {
+	background-color: #000000;
+	color: #ff0000;
+}
+
+label:focus {
+	background-color: #000000;
+}
+
+
+#tray > .passive {
+	-gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+	-gtk-icon-effect: highlight;
+	background-color: #eb4d4b;
+}
+
+#idle_inhibitor {
+	color: #00ffff;
+}
+
+#idle_inhibitor.activated {
+	color: #ff00ff;
+}
