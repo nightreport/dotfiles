@@ -79,7 +79,7 @@ return {
 			lspconfig.clangd.setup({
 				capabilities = capabilities,
 				init_options = {
-					fallbackFlags = { '-std=c++17' },
+					fallbackFlags = { '-std=c++23' },
 				},
 			})
 		end,
