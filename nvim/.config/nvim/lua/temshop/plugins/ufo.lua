@@ -16,6 +16,18 @@ return {
 				-- you can add other fields for setting up lsp server in this table
 			})
 		end
-		require("ufo").setup()
+		local ufo = require("ufo")
+		ufo.setup()
+
+		vim.keymap.set('n', 'zp', function()
+			local winid = ufo.peekFoldedLinesUnderCursor()
+			if not winid then
+				-- choose one of coc.nvim and nvim lsp
+				vim.lsp.buf.hover()
+			end
+		end)
+		--opt.foldcolumn = '1'
+		vim.opt.foldlevel = 99
+		vim.opt.foldenable = true
 	end,
 }
