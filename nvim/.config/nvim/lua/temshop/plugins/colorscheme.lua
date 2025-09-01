@@ -1,5 +1,8 @@
 return {
 	{
+		"saulhoward/kaodam",
+	},
+	{
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
