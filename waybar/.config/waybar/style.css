@@ -82,14 +82,9 @@
 	color: #ffc000;
 }
 #battery.critical:not(.charging) {
-	background-color: #000000;
+	background-color: rgba(100, 20, 20, 0.6);
 	color: #ff0000;
 }
-
-label:focus {
-	background-color: #000000;
-}
-
 
 #tray > .passive {
 	-gtk-icon-effect: dim;
@@ -106,4 +101,5 @@ label:focus {
 
 #idle_inhibitor.activated {
 	color: #ff00ff;
+	background-color: rgba(100, 20, 20, 0.6);
 }

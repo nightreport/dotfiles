@@ -16,6 +16,7 @@
 		"tray",
 	    "hyprland/language",
 		"idle_inhibitor",
+		"custom/clipboard",
 		"custom/notification",
 	],
 	"hyprland/language": {
@@ -125,7 +126,11 @@
 		"tooltip-format-deactivated" : "󰥓 Idle status: 󰥓\n      Normal",
 		"tooltip-format-activated" :   "󰥓 Idle status: 󰥓\n    Inhibited",
 	},
-
+	"custom/clipboard":{
+		"format": " ",
+		"on-click": "cliphist list | wofi -S dmenu | cliphist decode | wl-copy",
+		"tooltip-format": "󰥓 Clipboard Manager 󰥓"
+	},
 	"custom/notification":{
     	"format": "󱅫 ",
     	"on-click": "swaync-client -t -sw",
