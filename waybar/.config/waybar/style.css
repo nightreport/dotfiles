@@ -43,11 +43,13 @@
 #tray{
 	padding-left: 5px;
 	padding-right: 5px;
+	color: whitesmoke;
 }
 
 #language{
-	border: solid 2px rgba(175, 10, 10, 0.8);
-	border-radius: 5px;
+	background: #454545;
+	border-radius: 4px;
+
 }
 
 
@@ -61,8 +63,8 @@
 	margin-right: 0;
 }
 
-#pulseaudio {
-	color: #f5f5f5;
+#pulseaudio.output.muted {
+	color: gray;
 }
 
 #battery.charging,

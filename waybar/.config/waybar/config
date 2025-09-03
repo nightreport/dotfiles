@@ -10,18 +10,17 @@
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock", ],
     "modules-right": [
-		"backlight",
-		"pulseaudio",
-		"battery",
-		"tray",
-	    "hyprland/language",
-		"idle_inhibitor",
 		"custom/clipboard",
+	    "hyprland/language",
+		"tray",
+		"battery",
+		"backlight",
+		"pulseaudio#output",
+		"idle_inhibitor",
 		"custom/notification",
 	],
 	"hyprland/language": {
         "on-click": "hyprctl switchxkblayout current next",
-        "tooltip-format": "change language",
         "format-en": "en",
         "format-hr": "hr",
 	},
@@ -52,8 +51,8 @@
         "9": "九",
         "10": "十",
         "urgent": "",
+        "active": "",
         "default": "",
-        "active": ""
       }
     },
     "hyprland/window": {
@@ -67,23 +66,23 @@
 		"locale": "en_GB.UTF-8",
         /*"format": "{:L%Y.%m.%d.%H:%M -%a}", */
 		"interval": 1,
-        "format": "{:L%y.%m.%d.%H.%M.%S}",
+        "format": "󰥓 {:L%y.%m.%d.%H.%M.%S} 󰥓",
         "tooltip-format": "<tt><big>{calendar}</big></tt>",
     },
 
     "backlight": {
         "device": "DP-1",
-        "format": "{icon} {percent}%",
-        "format-icons": ["","", "", "", "", "",""],
+        "format": "{icon} : {percent}%",
+        "format-icons": ["",""],
 		"tooltip-format": "󰥓 Brightness Level 󰥓",
-        "on-click": "",
+        "on-click": "notify-send 'Achievement unlocked' 'You clicked on the brightness' -i ~/Pictures/medal.png -a 'Your curiosity'",
     },
 
-    "pulseaudio": {
+    "pulseaudio#output": {
         "format": "{icon} {volume}%",
         "format-bluetooth": " {volume}%",
-        "format-bluetooth-muted": "  00%",
-        "format-muted": "  00%",
+        "format-bluetooth-muted": "  {volume}%",
+        "format-muted": "  {volume}%",
         "format-icons": {
             "headphone": " ",
             "hands-free": "",
@@ -96,31 +95,31 @@
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     },
 
-    "battery": {
-      "bat": "BAT0",
-      "adapter": "ADP0",
-      "interval": 60,
-      "states": {
-		  "warning" : 30,
-          "critical": 15
-      },
-      "max-length": 20,
-      "format": "{icon} {capacity}%",
-      "format-warning": "{icon}  {capacity}%",
-      "format-critical": "{icon}  {capacity}%",
-      "format-charging": " {capacity}%",
-      "format-plugged": "  {capacity}%",
-      "format-alt": "{icon} {time}",
-      "format-full": "  {capacity}%",
-      "format-icons": [" ", " ", " ", " ", " "],
-    },
+	"battery": {
+		"bat": "BAT0",
+		"adapter": "ADP0",
+		"interval": 60,
+		"states": {
+			"warning" : 30,
+			"critical": 15
+		},
+		"max-length": 20,
+		"format": "{icon} {capacity}%",
+		"format-warning": "{icon}  {capacity}%",
+		"format-critical": "{icon}  {capacity}%",
+		"format-charging": " {capacity}%",
+		"format-plugged": "  {capacity}%",
+		"format-alt": "{icon} {time}",
+		"format-full": "  {capacity}%",
+		"format-icons": [" ", " ", " ", " ", " "],
+	},
 
 	"idle_inhibitor": {
 		"format": "{icon} ",
 		"format-icons":
 		{
 			"activated": "",
-            "deactivated": ""
+			"deactivated": ""
 		},
 		"tooltip" : true,
 		"tooltip-format-deactivated" : "󰥓 Idle status: 󰥓\n      Normal",
