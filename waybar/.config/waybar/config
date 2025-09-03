@@ -2,6 +2,7 @@
 {
     "height": 5, // Waybar height (to be removed for auto height)
     "layer": "top", // Waybar at top layer
+	"gtk-layer-shell": false,
     "margin-top": 0,
     "margin-left": 0,
     "margin-bottom": 0,
@@ -10,12 +11,12 @@
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock", ],
     "modules-right": [
-		"custom/clipboard",
-	    "hyprland/language",
 		"tray",
 		"battery",
 		"backlight",
 		"pulseaudio#output",
+		"custom/clipboard",
+	    "hyprland/language",
 		"idle_inhibitor",
 		"custom/notification",
 	],
@@ -27,16 +28,7 @@
     "hyprland/workspaces": {
       "format": "{icon}",
       "persistent-workspaces": {
-        "1": [],
-        "2": [],
-        "3": [],
-        "4": [],
-        "5": [],
-        "6": [],
-        "7": [],
-        "8": [],
-        "9": [],
-        "10": [],
+		  "*":10
       },
       "on-click": "activate",
       "format-icons": {
@@ -53,14 +45,18 @@
         "urgent": "",
         "active": "",
         "default": "",
-      }
+      },
+	  "all-outputs": true,
     },
     "hyprland/window": {
-        "format": "{}",
+        "format": "{initialTitle}",
 		"max-length": 30,
     },
     "tray": {
-        "spacing": 10
+        "spacing": 10,
+		"icons": {
+			"flameshot": "~/.local/share/icons/hicolor/32x32/apps/flameshot.png"
+		}
     },
     "clock": {
 		"locale": "en_GB.UTF-8",
@@ -72,17 +68,17 @@
 
     "backlight": {
         "device": "DP-1",
-        "format": "{icon} : {percent}%",
+        "format": "[{icon}  {percent}%]",
         "format-icons": ["",""],
 		"tooltip-format": "󰥓 Brightness Level 󰥓",
         "on-click": "notify-send 'Achievement unlocked' 'You clicked on the brightness' -i ~/Pictures/medal.png -a 'Your curiosity'",
     },
 
     "pulseaudio#output": {
-        "format": "{icon} {volume}%",
-        "format-bluetooth": " {volume}%",
-        "format-bluetooth-muted": "  {volume}%",
-        "format-muted": "  {volume}%",
+        "format": "[{icon} {volume}%]",
+        "format-bluetooth": "[ {volume}%]",
+        "format-bluetooth-muted": "[  {volume}%]",
+        "format-muted": "[  {volume}%]",
         "format-icons": {
             "headphone": " ",
             "hands-free": "",
@@ -104,13 +100,13 @@
 			"critical": 15
 		},
 		"max-length": 20,
-		"format": "{icon} {capacity}%",
-		"format-warning": "{icon}  {capacity}%",
-		"format-critical": "{icon}  {capacity}%",
-		"format-charging": " {capacity}%",
-		"format-plugged": "  {capacity}%",
-		"format-alt": "{icon} {time}",
-		"format-full": "  {capacity}%",
+		"format": "[{icon} {capacity}%]",
+		"format-warning": "[{icon}  {capacity}%]",
+		"format-critical": "[{icon}  {capacity}%]",
+		"format-charging": "[ {capacity}%]",
+		"format-plugged": "[  {capacity}%]",
+		"format-alt": "[{icon} {time}]",
+		"format-full": "[  {capacity}%]",
 		"format-icons": [" ", " ", " ", " ", " "],
 	},
 
@@ -126,7 +122,7 @@
 		"tooltip-format-activated" :   "󰥓 Idle status: 󰥓\n    Inhibited",
 	},
 	"custom/clipboard":{
-		"format": " ",
+		"format": "󱉨",
 		"on-click": "cliphist list | wofi -S dmenu | cliphist decode | wl-copy",
 		"tooltip-format": "󰥓 Clipboard Manager 󰥓"
 	},
