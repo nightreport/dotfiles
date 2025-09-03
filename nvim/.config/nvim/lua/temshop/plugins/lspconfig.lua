@@ -69,7 +69,6 @@ return {
 								enable = true,
 							},
 						},
-
 					},
 				},
 				on_attach = function(_, bufnr)
@@ -79,7 +78,14 @@ return {
 			lspconfig.clangd.setup({
 				capabilities = capabilities,
 				init_options = {
-					fallbackFlags = { '-std=c++23' },
+					fallbackFlags = { "-std=c++23" },
+				},
+			})
+			lspconfig.cssls.setup({
+				settings = {
+					css = {
+						validate = true,
+					},
 				},
 			})
 		end,
