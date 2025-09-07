@@ -49,7 +49,7 @@
 	  "all-outputs": true,
     },
     "hyprland/window": {
-        "format": "{initialTitle}",
+        "format": "{initialClass}",
 		"max-length": 30,
     },
     "tray": {
@@ -68,7 +68,7 @@
 
     "backlight": {
         "device": "DP-1",
-        "format": "[{icon}  {percent}%]",
+        "format": "[{icon} {percent}%]",
         "format-icons": ["",""],
 		"tooltip-format": "󰥓 Brightness Level 󰥓",
         "on-click": "notify-send 'Achievement unlocked' 'You clicked on the brightness' -i ~/Pictures/medal.png -a 'Your curiosity'",
@@ -101,12 +101,12 @@
 		},
 		"max-length": 20,
 		"format": "[{icon} {capacity}%]",
-		"format-warning": "[{icon}  {capacity}%]",
-		"format-critical": "[{icon}  {capacity}%]",
+		"format-warning": "[{icon} {capacity}%]",
+		"format-critical": "[{icon} {capacity}%]",
 		"format-charging": "[ {capacity}%]",
-		"format-plugged": "[  {capacity}%]",
+		"format-plugged": "[ {capacity}%]",
 		"format-alt": "[{icon} {time}]",
-		"format-full": "[  {capacity}%]",
+		"format-full": "[ {capacity}%]",
 		"format-icons": [" ", " ", " ", " ", " "],
 	},
 

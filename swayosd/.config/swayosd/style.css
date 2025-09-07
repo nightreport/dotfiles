@@ -1,8 +1,19 @@
 window#osd {
   padding: 0px 5px;
-  border-radius: 25px;
-  border: 2px solid whitesmoke;
-  background: alpha(#000000, 0.8);
+  border: 3.5px solid transparent;
+  border-radius: 20px;
+  background: 
+    linear-gradient(#101010, #101010) padding-box,
+    linear-gradient(
+		25deg,
+		rgba(142, 57, 227, 1) 0%,
+		rgba(230, 60, 153, 1) 16%,
+		rgba(255, 55, 41, 1) 32%,
+		rgba(240, 186, 120, 1) 55%,
+		rgba(198, 247, 188, 1) 79%,
+		rgba(142, 250, 203, 1) 90%,
+		rgba(0, 195, 255, 1) 100%
+	) border-box;
 }
 window#osd #container {
     margin: 16px;
@@ -24,7 +35,7 @@ window#osd progressbar {
 }
 window#osd trough {
     min-height: inherit;
-    border-radius: inherit;s
+    border-radius: inherit;
     border: none;
     background: #505050;
 }

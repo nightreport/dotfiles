@@ -3,17 +3,17 @@
   border-radius: 0;
   margin-top: 0px;
   margin-right: 0px;
-
   font-family: MononokiNerdFont;
   font-size: 13px;
 }
+
 window#waybar {
   background: rgba(20, 20, 20, 0.9);
 }
 
 #workspaces button {
   padding: 0 5px;
-  border-radius: 4px;
+  border-top: whitesmoke solid  1px;
 }
 
 #workspaces button.focused {
@@ -22,13 +22,50 @@ window#waybar {
 
 #workspaces button.active {
   color: #ff0000;
+  border-top:  1px solid #ff0000;
 }
+
 #workspaces button.urgent {
   background-color: #eb4d4b;
 }
+
 #workspaces button:hover {
   background: whitesmoke;
   color: #454545;
+  border-top: red solid  1px;
+}
+
+tooltip {
+  background: rgba(20,20,20,0.8);
+  border: 2px solid transparent;
+  border-radius: 7px;
+  /* border-image: linear-gradient( */
+  /*   25deg, */
+  /*   rgba(142, 57, 227, 1) 0%, */
+  /*   rgba(230, 60, 153, 1) 16%, */
+  /*   rgba(255, 55, 41, 1) 32%, */
+  /*   rgba(240, 186, 120, 1) 55%, */
+  /*   rgba(198, 247, 188, 1) 79%, */
+  /*   rgba(142, 250, 203, 1) 90%, */
+  /*   rgba(0, 195, 255, 1) 100% */
+  /* )1; */
+  background: 
+    linear-gradient(#202020, #202020) padding-box,
+    linear-gradient(
+		25deg,
+		rgba(142, 57, 227, 1) 0%,
+		rgba(230, 60, 153, 1) 16%,
+		rgba(255, 55, 41, 1) 32%,
+		rgba(240, 186, 120, 1) 55%,
+		rgba(198, 247, 188, 1) 79%,
+		rgba(142, 250, 203, 1) 90%,
+		rgba(0, 195, 255, 1) 100%
+	) border-box;
+}
+
+tooltip label {
+  color: whitesmoke;
+  background: transparent;
 }
 
 #clock,
@@ -41,7 +78,8 @@ window#waybar {
 #custom-notification,
 #custom-clipboard,
 #window,
-#tray {
+#tray > .active {
+  border-top: whitesmoke solid  1px;
   background: transparent;
   padding-left: 5px;
   padding-right: 5px;
@@ -49,19 +87,24 @@ window#waybar {
 
 #pulseaudio.output.muted {
   color: gray;
+  border-top:  1px solid gray;
 }
 
 #battery.charging,
 #battery.plugged {
   color: #ffff00;
+  border-top: #ffff00  1px solid;
 }
+
 #battery.full {
   color: #0a95d5;
+  border-top: #0a95d5  1px solid;
 }
+
 #battery.warning:not(.charging) {
-  background-color: #000000;
   color: #ffc000;
 }
+
 #battery.critical:not(.charging) {
   background-color: rgba(100, 20, 20, 0.6);
   color: #ff0000;
@@ -70,9 +113,11 @@ window#waybar {
 #idle_inhibitor {
   color: #00ffff;
 }
+
 #idle_inhibitor.activated {
   color: #ff00ff;
   background-color: rgba(100, 20, 20, 0.6);
+  border-top: red  1px solid;
 }
 
 #clock:hover,
@@ -90,7 +135,7 @@ window#waybar {
   padding-right: 5px;
   color: #454545;
   background: whitesmoke;
-  border-radius: 4px;
+  border-top: red  1px solid;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
