@@ -70,7 +70,7 @@
 	},
 	"backlight": {
 		"device": "DP-1",
-		"format": "[{icon} {percent}%]",
+		"format": "{icon} {percent}%",
 		"format-icons": [
 			"",
 			""
@@ -79,10 +79,10 @@
 		"on-click": "notify-send 'Achievement unlocked' 'You clicked on the brightness' -i ~/Pictures/medal.png -a 'Your curiosity'"
 	},
 	"pulseaudio#output": {
-		"format": "[{icon} {volume}%]",
-		"format-bluetooth": "[ {volume}%]",
-		"format-bluetooth-muted": "[  {volume}%]",
-		"format-muted": "[  {volume}%]",
+		"format": "{icon} {volume}%",
+		"format-bluetooth": " {volume}%",
+		"format-bluetooth-muted": "  {volume}%",
+		"format-muted": "  {volume}%",
 		"format-icons": {
 			"headphone": " ",
 			"hands-free": "",
@@ -107,13 +107,13 @@
 			"critical": 15
 		},
 		"max-length": 20,
-		"format": "[{icon} {capacity}%]",
-		"format-warning": "[{icon} {capacity}%]",
-		"format-critical": "[{icon} {capacity}%]",
-		"format-charging": "[ {capacity}%]",
-		"format-plugged": "[ {capacity}%]",
-		"format-alt": "[{icon} {time}]",
-		"format-full": "[ {capacity}%]",
+		"format": "{icon} {capacity}%",
+		"format-warning": "{icon} {capacity}%",
+		"format-critical": "{icon} {capacity}%",
+		"format-charging": " {capacity}%",
+		"format-plugged": " {capacity}%",
+		"format-alt": "{icon} {time}",
+		"format-full": " {capacity}%",
 		"format-icons": [
 			" ",
 			" ",
