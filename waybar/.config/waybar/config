@@ -1,102 +1,109 @@
-// vim: set filetype=jsonc:
 {
-    "height": 5, // Waybar height (to be removed for auto height)
-    "layer": "top", // Waybar at top layer
+	"layer": "top",
 	"gtk-layer-shell": false,
-    "margin-top": 0,
-    "margin-left": 0,
-    "margin-bottom": 0,
-    "margin-right": 0,
-    "spacing": 5, // Gaps between modules (4px)
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
-    "modules-center": ["clock", ],
-    "modules-right": [
+	"mode": "dock",
+	"margin-top": 0,
+	"margin-left": 0,
+	"margin-bottom": 0,
+	"margin-right": 0,
+	"spacing": 5,
+	"modules-left": [
+		"hyprland/workspaces",
+		"hyprland/window"
+	],
+	"modules-center": [
+		"clock"
+	],
+	"modules-right": [
 		"tray",
 		"battery",
 		"backlight",
 		"pulseaudio#output",
 		"custom/clipboard",
-	    "hyprland/language",
+		"hyprland/language",
 		"idle_inhibitor",
-		"custom/notification",
+		"custom/notification"
 	],
 	"hyprland/language": {
-        "on-click": "hyprctl switchxkblayout current next",
-        "format-en": "en",
-        "format-hr": "hr",
+		"on-click": "hyprctl switchxkblayout current next",
+		"format-en": "en",
+		"format-hr": "hr"
 	},
-    "hyprland/workspaces": {
-      "format": "{icon}",
-      "persistent-workspaces": {
-		  "*":10
-      },
-      "on-click": "activate",
-      "format-icons": {
-        "1": "—",
-        "2": "二",
-        "3": "三",
-        "4": "四",
-        "5": "五",
-        "6": "六",
-        "7": "七",
-        "8": "八",
-        "9": "九",
-        "10": "十",
-        "urgent": "",
-        "active": "",
-        "default": "",
-      },
-	  "all-outputs": true,
-    },
-    "hyprland/window": {
-        "format": "{initialClass}",
-		"max-length": 30,
-    },
-    "tray": {
-        "spacing": 10,
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"persistent-workspaces": {
+			"*": 10
+		},
+		"on-click": "activate",
+		"format-icons": {
+			"1": "—",
+			"2": "二",
+			"3": "三",
+			"4": "四",
+			"5": "五",
+			"6": "六",
+			"7": "七",
+			"8": "八",
+			"9": "九",
+			"10": "十",
+			"urgent": "",
+			"active": "",
+			"default": ""
+		},
+		"all-outputs": true
+	},
+	"hyprland/window": {
+		"format": "{initialClass}",
+		"max-length": 30
+	},
+	"tray": {
+		"spacing": 10,
 		"icons": {
 			"flameshot": "~/.local/share/icons/hicolor/32x32/apps/flameshot.png"
 		}
-    },
-    "clock": {
+	},
+	"clock": {
 		"locale": "en_GB.UTF-8",
-        /*"format": "{:L%Y.%m.%d.%H:%M -%a}", */
 		"interval": 1,
-        "format": "󰥓 {:L%y.%m.%d.%H.%M.%S} 󰥓",
-        "tooltip-format": "<tt><big>{calendar}</big></tt>",
-    },
-
-    "backlight": {
-        "device": "DP-1",
-        "format": "[{icon} {percent}%]",
-        "format-icons": ["",""],
+		"format": "󰥓 {:L%H:%M:%S 󰥓 %y.%m.%d.} 󰥓",
+		"tooltip-format": "<tt><big>{calendar}</big></tt>"
+	},
+	"backlight": {
+		"device": "DP-1",
+		"format": "[{icon} {percent}%]",
+		"format-icons": [
+			"",
+			""
+		],
 		"tooltip-format": "󰥓 Brightness Level 󰥓",
-        "on-click": "notify-send 'Achievement unlocked' 'You clicked on the brightness' -i ~/Pictures/medal.png -a 'Your curiosity'",
-    },
-
-    "pulseaudio#output": {
-        "format": "[{icon} {volume}%]",
-        "format-bluetooth": "[ {volume}%]",
-        "format-bluetooth-muted": "[  {volume}%]",
-        "format-muted": "[  {volume}%]",
-        "format-icons": {
-            "headphone": " ",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", " ", " "]
-        },
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-    },
-
+		"on-click": "notify-send 'Achievement unlocked' 'You clicked on the brightness' -i ~/Pictures/medal.png -a 'Your curiosity'"
+	},
+	"pulseaudio#output": {
+		"format": "[{icon} {volume}%]",
+		"format-bluetooth": "[ {volume}%]",
+		"format-bluetooth-muted": "[  {volume}%]",
+		"format-muted": "[  {volume}%]",
+		"format-icons": {
+			"headphone": " ",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": [
+				"",
+				" ",
+				" "
+			]
+		},
+		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+	},
 	"battery": {
 		"bat": "BAT0",
 		"adapter": "ADP0",
 		"interval": 60,
 		"states": {
-			"warning" : 30,
+			"warning": 30,
 			"critical": 15
 		},
 		"max-length": 20,
@@ -107,28 +114,32 @@
 		"format-plugged": "[ {capacity}%]",
 		"format-alt": "[{icon} {time}]",
 		"format-full": "[ {capacity}%]",
-		"format-icons": [" ", " ", " ", " ", " "],
+		"format-icons": [
+			" ",
+			" ",
+			" ",
+			" ",
+			" "
+		]
 	},
-
 	"idle_inhibitor": {
 		"format": "{icon} ",
-		"format-icons":
-		{
+		"format-icons": {
 			"activated": "",
 			"deactivated": ""
 		},
-		"tooltip" : true,
-		"tooltip-format-deactivated" : "󰥓 Idle status: 󰥓\n      Normal",
-		"tooltip-format-activated" :   "󰥓 Idle status: 󰥓\n    Inhibited",
+		"tooltip": true,
+		"tooltip-format-deactivated": "󰥓 Idle status: 󰥓\n      Normal",
+		"tooltip-format-activated": "󰥓 Idle status: 󰥓\n    Inhibited"
 	},
-	"custom/clipboard":{
+	"custom/clipboard": {
 		"format": "󱉨",
 		"on-click": "cliphist list | wofi -S dmenu | cliphist decode | wl-copy",
 		"tooltip-format": "󰥓 Clipboard Manager 󰥓"
 	},
-	"custom/notification":{
-    	"format": "󱅫 ",
-    	"on-click": "swaync-client -t -sw",
-        "tooltip-format": "󰥓 Notification Centre 󰥓",
-    },
+	"custom/notification": {
+		"format": "󱅫 ",
+		"on-click": "swaync-client -t -sw",
+		"tooltip-format": "󰥓 Notification Centre 󰥓"
+	}
 }
