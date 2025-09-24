@@ -1,3 +1,4 @@
+-- plugin manager setup
 local lazypath = vim.fn.stdpath("data") .. "lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -18,6 +19,14 @@ end
 
 lazy.setup({
 	spec = {
-		{ import = "temshop.plugins" },
+		{ import = "plugins" },
+	},
+	change_detection = {
+		-- automatically check for config file changes and reload the ui
+		enabled = false,     -- default: true
+		notify = true, -- get a notification when changes are found
+	},
+	install = {
+		colorscheme = { "carbonfox" },
 	},
 })
