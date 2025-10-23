@@ -29,12 +29,25 @@ vim.o.mouse = "a"
 vim.o.splitright = true
 vim.o.splitbelow = true
 require("config.lazy")
+vim.g.maplocalleader = " "
 
-vim.cmd.colorscheme("monoglow")
+vim.cmd.colorscheme("cyberdream")
 require("telescope").load_extension("ui-select")
 
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y"')
 vim.keymap.set("n", "<leader>p", '"+p"')
 vim.keymap.set({ "n", "v" }, "<leader>d", '"+d"')
+vim.keymap.set("n", "<leader>l", function()
+	local tex_file = vim.fn.expand("%:p")
+	local pdf_file = tex_file:gsub("%.tex$", ".pdf")
+	vim.system({ "xelatex", tex_file }, {
+		cwd = vim.fn.expand("%:p:h"),
+	}):wait()
+	vim.system({ "xelatex", tex_file }, {
+		cwd = vim.fn.expand("%:p:h"),
+	}):wait()
+	vim.system({ "mupdf", pdf_file }, { detach = true })
+end)
 -- stylua: ignore
 vim.keymap.set("n", "rr", function() vim.diagnostic.open_float() end)
+-- stylua: noignore
