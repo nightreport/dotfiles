@@ -135,7 +135,7 @@
 	},
 	"custom/clipboard": {
 		"format": "󱉨",
-		"on-click": "cliphist list | wofi -S dmenu | cliphist decode | wl-copy",
+		"on-click": "~/Scripts/fuzzel_img.sh",
 		"tooltip-format": "󰥓 Clipboard Manager 󰥓"
 	},
 	"custom/notification": {
