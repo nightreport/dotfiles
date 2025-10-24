@@ -1,4 +1,4 @@
-alias lla='lsd -la --hyperlink=auto --group-directories-first --blocks permission,size,user,date,name'
+alias lla='lsd -lA --hyperlink=auto --group-directories-first --blocks permission,size,user,date,name'
 alias ll='lsd -l --hyperlink=auto --group-directories-first'
 alias l='lsd --hyperlink=auto --group-directories-first'
 alias la='lsd -A --hyperlink=auto --group-directories-first'
