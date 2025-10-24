@@ -1,3 +1,4 @@
+// vim: set filetype=jsonc:
 {
 	"layer": "top",
 	"gtk-layer-shell": false,
