@@ -66,7 +66,7 @@
 	"clock": {
 		"locale": "en_GB.UTF-8",
 		"interval": 1,
-		"format": "󰥓 {:L%H:%M:%S 󰥓 %y.%m.%d.} 󰥓",
+		"format": "󰥓 {:L%y.%m.%d. %a 󰥓 %H:%M:%S } 󰥓",
 		"tooltip-format": "<tt><big>{calendar}</big></tt>"
 	},
 	"backlight": {
