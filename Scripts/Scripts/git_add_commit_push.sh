@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+if ! git status &> /dev/null
+then
+	echo "Not a git directory"
+	exit 1
+fi
+
+command echo "Suggested:"
+git status | rg "(modified:|deleted:)"
 command echo -n "To add: "
 read -r file_to_add
 
