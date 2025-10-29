@@ -13,7 +13,11 @@ read -er file_to_add
 
 if [[ -z $file_to_add ]]
 then
-	echo "Nothing selected. Exiting..." >&2
+	command echo -n "["
+	tput setaf 1
+	command echo -n "ERR"
+	tput setaf 7
+	echo " ] Nothing selected. Exiting..." >&2
 	exit 1
 fi
 
