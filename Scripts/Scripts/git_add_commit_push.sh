@@ -40,5 +40,5 @@ command echo "[LOG ] git push origin $branch_name"
 command echo -n "[ "
 tput setaf 2
 command echo -n "OK"
-tput rev
+tput setaf 7
 command echo " ] All done."
