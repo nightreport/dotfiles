@@ -16,4 +16,5 @@ alias update="yay -Syyu --noconfirm"
 alias neofetch="hyfetch"
 
 export QT_QPA_PLATFORMTHEME=qt6ct
+export RIPGREP_CONFIG_PATH=/home/temshop/.config/ripgrep/ripgreprc
 export PATH=~/.cargo/bin/:$PATH
