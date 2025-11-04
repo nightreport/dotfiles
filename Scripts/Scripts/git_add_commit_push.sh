@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+fatal (){
+	echo ""
+	echo "[LOG ] Caught SIGNT. Exiting."
+	exit 0
+}
+
+trap fatal SIGINT
+
 if ! git status &> /dev/null
 then
 	echo "Not a git directory" >&2
@@ -8,17 +16,12 @@ fi
 
 command echo "Suggested:"
 git status | rg "(modified:|deleted:)" | cut -d: -f2
-command echo -n "To add: "
+command echo -n "To add (default: .): "
 read -er file_to_add
 
 if [[ -z $file_to_add ]]
 then
-	command echo -n "["
-	tput setaf 1
-	command echo -n "ERR"
-	tput setaf 7
-	echo " ] Nothing selected. Exiting..." >&2
-	exit 1
+	file_to_add="."
 fi
 
 git add "$file_to_add"
