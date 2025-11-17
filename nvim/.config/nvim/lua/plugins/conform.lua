@@ -1,17 +1,20 @@
 return {
 	"stevearc/conform.nvim",
 	opts = {
-		format_on_save = {
-			timeout_ms = 500,
-		},
 		formatters_by_ft = {
-			c = { "clang-format" },
-			cpp = { "clang-format" },
+			c = { "kys" },
+			cpp = { "kys" },
 			lua = { "stylua" },
 			python = { "black" },
 			rust = { "rustfmt", lsp_format = "fallback" },
 			json = { "fixjson" },
 			jsonc = { "fixjson" },
+		},
+		formatters = {
+			kys = {
+				command = "clang-format",
+				args = {"--style=Microsoft"}
+			}
 		},
 	},
 	keys = {
