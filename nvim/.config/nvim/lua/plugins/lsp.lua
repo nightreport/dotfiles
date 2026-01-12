@@ -5,11 +5,7 @@ return {
 		{ "mason-org/mason-lspconfig.nvim" },
 	},
 	config = function()
-		vim.lsp.config.clangd = {
-			init_options = {
-				fallbackFlags = { "--std=c++23" },
-			},
-		}
+		vim.lsp.config.clangd = {}
 		vim.lsp.config.pyright = {}
 		vim.lsp.config.rust_analyzer = {}
 		vim.lsp.config.lua_ls = {
