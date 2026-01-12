@@ -11,7 +11,7 @@ margin = 30
 lazy = true
 
 [scratchpads.volume]
-animation = "fromRight"
+animation = "fromBottom"
 command = "pavucontrol"
 class = "org.pulseaudio.pavucontrol"
 size = "60% 90%"
