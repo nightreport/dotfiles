@@ -2,7 +2,11 @@
 
 fatal (){
 	echo ""
-	echo "[LOG ] Caught SIGNT. Exiting."
+	command echo -n "[" 
+	tput setaf 1
+	command echo -n "ERR"
+	tput setaf 7
+	echo " ] Caught SIGNT. Exiting."
 	exit 0
 }
 
