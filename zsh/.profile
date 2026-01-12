@@ -12,7 +12,7 @@ alias nv='nvim'
 alias piton='python'
 alias set-wallpaper="~/Scripts/set-wallpaper.sh"
 alias gi="~/Scripts/git_add_commit_push.sh"
-alias update="yay -Syyu --noconfirm"
+alias update="yay -Syyu"
 alias neofetch="hyfetch"
 
 export QT_QPA_PLATFORMTHEME=qt6ct
