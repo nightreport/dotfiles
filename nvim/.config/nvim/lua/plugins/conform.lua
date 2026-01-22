@@ -13,7 +13,7 @@ return {
 		formatters = {
 			kys = {
 				command = "clang-format",
-				args = {"--style=Microsoft"}
+				args = {"--style={BasedOnStyle: Microsoft, UseTab: Always}"}
 			}
 		},
 	},
