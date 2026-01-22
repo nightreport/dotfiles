@@ -12,6 +12,7 @@ alias piton='python'
 alias set-wallpaper="~/Scripts/set-wallpaper.sh"
 alias gi="~/Scripts/git_add_commit_push.sh"
 alias update="yay -Syyu"
+alias unfuck-wifi="sudo systemctl restart NetworkManager"
 
 export QT_QPA_PLATFORMTHEME=qt6ct
 export RIPGREP_CONFIG_PATH=/home/temshop/.config/ripgrep/ripgreprc
